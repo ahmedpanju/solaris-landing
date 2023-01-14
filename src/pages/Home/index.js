@@ -1,9 +1,10 @@
 import React from "react";
 import { Flex } from "rebass";
 
-import Form from "../../components/Form";
+// import Form from "../../components/Form";
 
 import * as Styled from "./styles";
+import Modal from "../../components/Modal";
 
 const Home = () => {
   return (
@@ -31,8 +32,9 @@ const Home = () => {
             </Styled.ImageContainer>
           </Flex>
         </Styled.Jumbotron>
-        <Form />
+        {/* <Form /> */}
       </Styled.Wrapper>
+      <Modal />
     </Styled.Container>
   );
 };

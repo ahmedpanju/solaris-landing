@@ -11,7 +11,6 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 1000px;
-  background-color: red;
 `;
 
 export const Jumbotron = styled.div`
