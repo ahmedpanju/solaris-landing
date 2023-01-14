@@ -4,7 +4,7 @@ import SCREENS from "./screens";
 import BasicInfo from "../Form/screens/BasicInfo";
 import Payment from "../Form/screens/Payment";
 
-const Modal = () => {
+const Modal = ({ open, onClose }) => {
   const [currentScreenState, setCurrentScreenState] = useState(SCREENS.BASIC);
 
   const renderCurrentScreen = () => {
@@ -27,7 +27,7 @@ const Modal = () => {
   };
 
   return (
-    <Dialog open>
+    <Dialog open={open} onClose={onClose}>
       <DialogTitle>Secure Your Spot</DialogTitle>
       <div style={{ padding: "30px" }}>
         <div>{renderCurrentScreen()}</div>
