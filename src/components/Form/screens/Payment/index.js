@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 
 import * as Styled from "./styles";
@@ -8,12 +9,28 @@ const Payment = () => {
     <div>
       <Styled.Label>Rp50,000</Styled.Label>
       <PaymentForm
-        applicationId="sandbox-sq0idb-NyYouwfgznIQYotX5bN3GA"
-        cardTokenizeResponseReceived={(token, buyer) => {
-          console.info({ token, buyer });
+        applicationId={process.env.REACT_APP_APP_ID}
+        cardTokenizeResponseReceived={async (token, buyer) => {
+          // const config = {
+          //   headers: {
+          //     Authorization: `Bearer EAAAENhMuZCKD1mPa0o40WJGGuuMU5tnxFZw0MHJolqMDhrCPV8ViPfnHXKFgNig`,
+          //   },
+          // };
+
+          try {
+            await axios.post(
+              "http://localhost:8080/square/new-payment",
+              {
+                sourceId: token.token,
+              }
+              // config
+            );
+          } catch (error) {
+            console.log("error");
+          }
         }}
         createVerificationDetails={() => ({
-          amount: "1.00",
+          amount: "3.31",
           billingContact: {
             addressLines: ["123 Main Street", "Apartment 1"],
             familyName: "Doe",
@@ -21,10 +38,10 @@ const Payment = () => {
             countryCode: "GB",
             city: "London",
           },
-          currencyCode: "GBP",
+          currencyCode: "USD",
           intent: "CHARGE",
         })}
-        locationId="LHV7FXFYCGWX7"
+        locationId={process.env.REACT_APP_LOCATION_ID}
       >
         <CreditCard />
       </PaymentForm>

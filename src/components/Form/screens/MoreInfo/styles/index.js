@@ -1,21 +1,15 @@
 import styled from "styled-components";
-import TextField from "@mui/material/TextField";
 
-export const Label = styled.p`
+export const Title = styled.h1`
   margin: 0;
   padding: 0;
-  color: white;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 `;
 
-export const Input = styled(TextField)`
-  && {
-    width: 300px;
-
-    @media (max-width: 768px) {
-      width: 200px;
-    }
-  }
+export const Description = styled.p`
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
 `;
 
 export const BlackButton = styled.button`

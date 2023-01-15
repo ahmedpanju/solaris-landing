@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Flex } from "rebass";
 
-import SCREENS from "./config/screens";
 import BasicInfo from "./screens/BasicInfo";
+import { AttendeesContext } from "../../context";
 
 const JOBS = {};
 
 const Form = () => {
-  const [currentScreenState, setCurrentScreenState] = useState(SCREENS.BASIC);
+  const attendeesContext = useContext(AttendeesContext);
 
   const renderCurrentScreen = () => {
-    if (currentScreenState === SCREENS.BASIC) {
+    if (
+      attendeesContext.currentScreenState === attendeesContext.SCREENS.BASIC
+    ) {
       return <BasicInfo />;
     }
   };

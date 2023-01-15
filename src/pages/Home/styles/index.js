@@ -13,6 +13,10 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   width: 1000px;
   padding: 75px 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Jumbotron = styled.div`
@@ -21,12 +25,22 @@ export const Jumbotron = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const TitleText = styled.h1`
   margin: 0;
   padding: 0;
   color: ${({ color = "white" }) => color};
+`;
+
+export const MainTitleText = styled(TitleText)`
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SmallText = styled.h4`
@@ -46,11 +60,19 @@ export const BlackButton = styled.button`
   margin-top: 25px;
   color: white;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
+  }
 `;
 
 export const ImageContainer = styled.div`
   width: 400px;
   height: 400px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
@@ -65,6 +87,11 @@ export const InfoPanel = styled.div`
   padding: 75px 0;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const SinglePanel = styled.div`
@@ -75,10 +102,20 @@ export const SinglePanel = styled.div`
 
   &:first-of-type {
     margin-right: 50px;
+
+    @media (max-width: 768px) {
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
   }
 
   &:last-of-type {
     margin-left: 50px;
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+      margin-top: 50px;
+    }
   }
 `;
 
@@ -114,6 +151,11 @@ export const FooterPanel = styled.div`
   width: 100%;
   display: flex;
   flex: 2;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const SingleFooterPanel = styled.div`

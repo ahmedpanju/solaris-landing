@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <Styled.Container>
       <Styled.Wrapper>
-        <Styled.TitleText>SOLARIS</Styled.TitleText>
+        <Styled.MainTitleText>SOLARIS</Styled.MainTitleText>
         <Styled.Jumbotron>
           <Flex flexDirection="column">
             <Flex mb="25px">
