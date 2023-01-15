@@ -4,6 +4,7 @@ import BasicInfo from "../Form/screens/BasicInfo";
 import Payment from "../Form/screens/Payment";
 import { AttendeesContext } from "../../context";
 import MoreInfo from "../Form/screens/MoreInfo";
+import ThankYou from "../Form/screens/ThankYou";
 
 const Modal = ({ open, onClose }) => {
   const attendeesContext = useContext(AttendeesContext);
@@ -28,6 +29,11 @@ const Modal = ({ open, onClose }) => {
       attendeesContext.currentScreenState === attendeesContext.SCREENS.MORE_INFO
     ) {
       return <MoreInfo onClose={handleClose} />;
+    }
+    if (
+      attendeesContext.currentScreenState === attendeesContext.SCREENS.THANK_YOU
+    ) {
+      return <ThankYou onClose={handleClose} />;
     }
   };
 

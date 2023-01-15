@@ -10,7 +10,7 @@ const SCREENS = {
 };
 
 const AttendeesProvider = ({ children }) => {
-  const [currentScreenState, setCurrentScreenState] = useState(SCREENS.PAYMENT);
+  const [currentScreenState, setCurrentScreenState] = useState(SCREENS.BASIC);
   const [currentAttendeeIdState, setCurrentAttendeeIdState] = useState("");
 
   return (
