@@ -48,6 +48,9 @@ const BasicInfo = () => {
     if (!formState.walletAddress) {
       toast.error("Please enter your wallet address");
     }
+    if (!/^0x[a-fA-F0-9]{40}$/.test(formState.walletAddress)) {
+      toast.error("Please enter a valid wallet address");
+    }
     if (!formState.role) {
       toast.error("Please select a job title");
     }
