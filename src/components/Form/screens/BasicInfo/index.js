@@ -186,7 +186,9 @@ const BasicInfo = () => {
         </Flex>
       )}
       <Flex justifyContent="center">
-        <Styled.BlackButton onClick={validateResults}>
+        <Styled.BlackButton
+          onClick={() => !isLoadingState && validateResults()}
+        >
           Continue To Payment
         </Styled.BlackButton>
       </Flex>
