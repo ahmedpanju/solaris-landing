@@ -57,7 +57,16 @@ const BasicInfo = () => {
     if (formState.role === "OTHER" && !formState.otherRole) {
       toast.error("Please specify your job title");
     }
-    handleSubmitBasicInfo();
+    if (
+      formState.name &&
+      formState.email &&
+      validateEmail(formState.email) &&
+      formState.walletAddress &&
+      /^0x[a-fA-F0-9]{40}$/.test(formState.walletAddress) &&
+      formState.role
+    ) {
+      handleSubmitBasicInfo();
+    }
   };
 
   const handleSubmitBasicInfo = async () => {
