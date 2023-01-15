@@ -12,6 +12,9 @@ const SCREENS = {
 const AttendeesProvider = ({ children }) => {
   const [currentScreenState, setCurrentScreenState] = useState(SCREENS.BASIC);
   const [currentAttendeeIdState, setCurrentAttendeeIdState] = useState("");
+  const [closeButtonDisabledState, setClosedButtonDisabledState] = useState(
+    false
+  );
 
   return (
     <AttendeesContext.Provider
@@ -21,6 +24,8 @@ const AttendeesProvider = ({ children }) => {
         currentAttendeeIdState,
         setCurrentAttendeeIdState,
         SCREENS,
+        closeButtonDisabledState,
+        setClosedButtonDisabledState,
       }}
     >
       {children}

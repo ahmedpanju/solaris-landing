@@ -13,74 +13,39 @@ const Home = () => {
       <Styled.Wrapper>
         <Styled.MainTitleText>SOLARIS</Styled.MainTitleText>
         <Styled.Jumbotron>
-          <Flex flexDirection="column">
-            <Flex mb="25px">
-              <Styled.SmallText>Solaris</Styled.SmallText>
+          <Styled.ContainerForText flexDirection="column">
+            <Flex mb="50px">
+              <Styled.TitleText>
+                Join the Web3 Revolution - Exclusive Crypto Networking Events
+                for Tech Companies and Developers
+              </Styled.TitleText>
             </Flex>
-            <Styled.TitleText>
-              Lorem ipsum dolor sit
+            <Styled.SmallText>
+              We are the premier destination for Web3 enthusiasts, connecting
+              tech companies, developers and marketers through exclusive Web3
+              networking events.
               <br />
-              amet, consectetur.
-            </Styled.TitleText>
-            <Styled.BlackButton
-              onClick={() => setFormOpenState(!formOpenState)}
-            >
-              ENROLL NOW
-            </Styled.BlackButton>
-          </Flex>
-          <Flex>
-            <Styled.ImageContainer>
-              <Styled.Image
-                src="https://picsum.photos/400/400?grayscale"
-                alt="NFT Image"
-              />
-            </Styled.ImageContainer>
-          </Flex>
+              <br />
+              Fill out the form below to be considered for our first event:
+            </Styled.SmallText>
+            <Styled.ButtonContainer>
+              <Styled.BlackButton
+                onClick={() => setFormOpenState(!formOpenState)}
+              >
+                ENROLL NOW
+              </Styled.BlackButton>
+              <Styled.BlackButton
+                onClick={() =>
+                  window.open("https://twitter.com/Solarisevents_", "_blank")
+                }
+              >
+                <Styled.TwitterIcon />
+              </Styled.BlackButton>
+            </Styled.ButtonContainer>
+          </Styled.ContainerForText>
         </Styled.Jumbotron>
       </Styled.Wrapper>
-      <Styled.InfoPanel>
-        <Styled.SinglePanel>
-          <Styled.FirstPanelIcon />
-          <Styled.PanelTitle>First Title</Styled.PanelTitle>
-          <Styled.PanelDescription>
-            Etiam sagittis sem sed arcu ornare placerat. Morbi semper orci quis
-            gravida venenatis. Cras semper eu odio porttitor lacinia.
-          </Styled.PanelDescription>
-        </Styled.SinglePanel>
-        <Styled.SinglePanel>
-          <Styled.FirstPanelIcon />
-          <Styled.PanelTitle>Second Title</Styled.PanelTitle>
-          <Styled.PanelDescription>
-            Etiam sagittis sem sed arcu ornare placerat. Morbi semper orci quis
-            gravida venenatis. Cras semper eu odio porttitor lacinia.
-          </Styled.PanelDescription>
-        </Styled.SinglePanel>
-        <Styled.SinglePanel>
-          <Styled.FirstPanelIcon />
-          <Styled.PanelTitle>Third Title</Styled.PanelTitle>
-          <Styled.PanelDescription>
-            Etiam sagittis sem sed arcu ornare placerat. Morbi semper orci quis
-            gravida venenatis. Cras semper eu odio porttitor lacinia.
-          </Styled.PanelDescription>
-        </Styled.SinglePanel>
-      </Styled.InfoPanel>
-      <Styled.FooterPanel>
-        <Styled.SingleFooterPanel>
-          <Styled.TitleText color="black">Title here</Styled.TitleText>
-          <Styled.FooterInfoText>
-            Etiam sagittis sem sed arcu ornare placerat. Morbi semper orci quis
-            gravida venenatis. Cras semper eu odio porttitor lacinia. Etiam
-            sagittis sem sed arcu ornare placerat. Morbi semper orci quis
-            gravida venenatis. Cras semper eu odio porttitor lacinia. Etiam
-            sagittis sem sed arcu ornare placerat. Morbi semper orci quis
-            gravida venenatis. Cras semper eu odio porttitor lacinia.
-          </Styled.FooterInfoText>
-        </Styled.SingleFooterPanel>
-        <Styled.SingleFooterPanel>
-          <Styled.TitleText>Title here</Styled.TitleText>
-          <Styled.PanelDescription>Image needed here</Styled.PanelDescription>
-        </Styled.SingleFooterPanel>
-      </Styled.FooterPanel>
+
       <Modal open={formOpenState} onClose={() => setFormOpenState(false)} />
     </Styled.Container>
   );

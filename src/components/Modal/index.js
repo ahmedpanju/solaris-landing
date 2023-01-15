@@ -5,6 +5,9 @@ import Payment from "../Form/screens/Payment";
 import { AttendeesContext } from "../../context";
 import MoreInfo from "../Form/screens/MoreInfo";
 import ThankYou from "../Form/screens/ThankYou";
+import { Flex } from "rebass";
+
+import * as Styled from "./styles";
 
 const Modal = ({ open, onClose }) => {
   const attendeesContext = useContext(AttendeesContext);
@@ -38,15 +41,16 @@ const Modal = ({ open, onClose }) => {
   };
 
   return (
-    <Dialog
-      open={open}
-      onClose={() => {
-        onClose();
-        attendeesContext.setCurrentScreenState(attendeesContext.SCREENS.BASIC);
-      }}
-    >
-      <DialogTitle>Secure Your Spot</DialogTitle>
+    <Dialog open={open}>
       <div style={{ padding: "30px" }}>
+        <Flex mb="20px" justifyContent="space-between" alignItems="center">
+          <Styled.Title>Secure Your Spot</Styled.Title>
+          <Styled.CloseButton
+            onClick={() =>
+              !attendeesContext.closeButtonDisabledState && handleClose()
+            }
+          />
+        </Flex>
         <div>{renderCurrentScreen()}</div>
       </div>
     </Dialog>

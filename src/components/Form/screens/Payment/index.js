@@ -18,6 +18,7 @@ const Payment = () => {
         applicationId={process.env.REACT_APP_APP_ID}
         cardTokenizeResponseReceived={async (token) => {
           try {
+            attendeesContext.setClosedButtonDisabledState(true);
             const db = firebase.firestore();
             await axios.post(
               `${process.env.REACT_APP_API_URL}/square/new-payment`,
@@ -35,6 +36,7 @@ const Payment = () => {
               attendeesContext.SCREENS.THANK_YOU
             );
           } catch (error) {
+            attendeesContext.setClosedButtonDisabledState(false);
             toast.error("Something went wrong. Please try again");
           }
         }}

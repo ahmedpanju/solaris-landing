@@ -46,10 +46,10 @@ const BasicInfo = () => {
       toast.error("Please enter a valid email");
     }
     if (!formState.walletAddress) {
-      toast.error("Please enter your wallet address");
+      toast.error("Please enter your eth wallet address");
     }
     if (!/^0x[a-fA-F0-9]{40}$/.test(formState.walletAddress)) {
-      toast.error("Please enter a valid wallet address");
+      toast.error("Please enter a valid eth wallet address");
     }
     if (!formState.role) {
       toast.error("Please select a job title");
@@ -71,6 +71,7 @@ const BasicInfo = () => {
 
   const handleSubmitBasicInfo = async () => {
     try {
+      attendeesContext.setClosedButtonDisabledState(true);
       const db = firebase.firestore();
       setIsLoadingState(true);
       const checkIfAlreadyExists = await db
@@ -100,6 +101,7 @@ const BasicInfo = () => {
     } catch (error) {
       toast.error("Something went wrong. Please try again");
     } finally {
+      attendeesContext.setClosedButtonDisabledState(false);
       setIsLoadingState(false);
     }
   };
@@ -134,7 +136,7 @@ const BasicInfo = () => {
       <Flex mb="30px" flexDirection="column">
         <Styled.Input
           required
-          label="Wallet Address"
+          label="Ethereum Wallet Address"
           value={formState.walletAddress}
           onChange={(event) =>
             setFormState({ ...formState, walletAddress: event.target.value })

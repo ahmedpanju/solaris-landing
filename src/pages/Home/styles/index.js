@@ -1,10 +1,15 @@
 import styled, { css } from "styled-components";
+import { Flex } from "rebass";
 import AdbIcon from "@mui/icons-material/Adb";
+import Background from "./background2.png";
+import TwitterIconMui from "@mui/icons-material/Twitter";
 
 export const Container = styled.div`
   min-width: 100vw;
   min-height: 100vh;
-  background-image: linear-gradient(to right, #171717, #3d3d3d);
+  background-image: url(${Background});
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +25,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Jumbotron = styled.div`
-  height: 400px;
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -38,8 +43,12 @@ export const TitleText = styled.h1`
 `;
 
 export const MainTitleText = styled(TitleText)`
+  font-size: 100px;
+  margin-bottom: 25px;
+
   @media (max-width: 768px) {
-    display: none;
+    font-size: 50px;
+    padding-left: 20px;
   }
 `;
 
@@ -52,130 +61,47 @@ export const SmallText = styled.h4`
 export const BlackButton = styled.button`
   background-color: black;
   border-radius: 30px;
-  width: 150px;
-  height: 50px;
+  padding: 0 20px;
+  height: 75px;
   cursor: pointer;
-  border: none;
+  border: 2px solid white;
   outline: none;
-  margin-top: 25px;
+  margin-top: 30px;
   color: white;
   font-weight: bold;
+  font-size: 30px;
+
+  &:first-of-type {
+    margin-right: 20px;
+  }
 
   @media (max-width: 768px) {
     margin-bottom: 25px;
   }
 `;
 
-export const ImageContainer = styled.div`
-  width: 400px;
-  height: 400px;
+export const ContainerForText = styled.div`
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  border-radius: 5px;
 
   @media (max-width: 768px) {
-    width: 100%;
+    padding: 20px;
   }
 `;
 
-export const Image = styled.img`
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-`;
-
-export const InfoPanel = styled.div`
-  background-color: #242424;
-  width: 100%;
-  padding: 75px 0;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-export const SinglePanel = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 200px;
-
-  &:first-of-type {
-    margin-right: 50px;
-
-    @media (max-width: 768px) {
-      margin-right: 0px;
-      margin-bottom: 50px;
-    }
-  }
-
-  &:last-of-type {
-    margin-left: 50px;
-
-    @media (max-width: 768px) {
-      margin-left: 0px;
-      margin-top: 50px;
-    }
-  }
-`;
-
-const iconStyles = css`
-  color: white;
-  font-size: 40px;
-  margin-bottom: 20px;
-`;
-
-export const FirstPanelIcon = styled(AdbIcon)`
+export const TwitterIcon = styled(TwitterIconMui)`
   && {
-    ${iconStyles}
+    color: white;
   }
 `;
 
-export const PanelTitle = styled.p`
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 10px;
-`;
+export const ButtonContainer = styled(Flex)`
+  && {
+    margin-top: 30px;
 
-export const PanelDescription = styled.p`
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: white;
-`;
-
-export const FooterPanel = styled.div`
-  width: 100%;
-  display: flex;
-  flex: 2;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
-`;
-
-export const SingleFooterPanel = styled.div`
-  display: flex;
-  flex: 1;
-  padding: 75px;
-  flex-direction: column;
-
-  &:first-of-type {
-    background-color: white;
-  }
-
-  &:last-of-type {
-    background-color: #242424;
-  }
-`;
-
-export const FooterInfoText = styled.p`
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
-  line-height: 30px;
 `;
