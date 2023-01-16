@@ -21,9 +21,9 @@ const Home = () => {
               </Styled.TitleText>
             </Flex>
             <Styled.SmallText>
-              We are the premier destination for Web3 enthusiasts, connecting
-              tech companies, developers and marketers through exclusive Web3
-              networking events.
+              We are the premier destination for Web3 and A.I enthusiasts,
+              connecting tech companies, developers and marketers through
+              exclusive Web3 and A.I networking events.
               <br />
               <br />
               Fill out the form below to be considered for our first event:
