@@ -46,12 +46,6 @@ const BasicInfo = () => {
     if (!validateEmail(formState.email)) {
       toast.error("Please enter a valid email");
     }
-    if (!formState.walletAddress) {
-      toast.error("Please enter your eth wallet address");
-    }
-    if (!/^0x[a-fA-F0-9]{40}$/.test(formState.walletAddress)) {
-      toast.error("Please enter a valid eth wallet address");
-    }
     if (!formState.role) {
       toast.error("Please select a job title");
     }
@@ -62,8 +56,6 @@ const BasicInfo = () => {
       formState.name &&
       formState.email &&
       validateEmail(formState.email) &&
-      formState.walletAddress &&
-      /^0x[a-fA-F0-9]{40}$/.test(formState.walletAddress) &&
       formState.role
     ) {
       handleSubmitBasicInfo();
@@ -136,7 +128,6 @@ const BasicInfo = () => {
       </Flex>
       <Flex mb="30px" flexDirection="column">
         <Styled.Input
-          required
           label="Ethereum Wallet Address"
           value={formState.walletAddress}
           onChange={(event) =>
