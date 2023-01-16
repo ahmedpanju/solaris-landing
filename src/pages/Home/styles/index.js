@@ -39,12 +39,18 @@ export const Jumbotron = styled.div`
 export const TitleText = styled.h1`
   margin: 0;
   padding: 0;
+  font-family: "Oswald", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 4px;
   color: ${({ color = "white" }) => color};
 `;
 
 export const MainTitleText = styled(TitleText)`
   font-size: 100px;
   margin-bottom: 25px;
+  letter-spacing: 6px;
+  font-weight: 600;
 
   @media (max-width: 768px) {
     font-size: 50px;
@@ -56,6 +62,9 @@ export const SmallText = styled.h4`
   margin: 0;
   padding: 0;
   color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 20px;
 `;
 
 export const BlackButton = styled.button`
@@ -73,6 +82,10 @@ export const BlackButton = styled.button`
 
   &:first-of-type {
     margin-right: 20px;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
   }
 
   @media (max-width: 768px) {

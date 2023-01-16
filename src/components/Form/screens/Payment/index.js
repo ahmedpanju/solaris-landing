@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 import firebase from "firebase/compat/app";
+import { Flex } from "rebass";
 
 import { AttendeesContext } from "../../../../context";
 
@@ -36,14 +37,22 @@ const Payment = () => {
               attendeesContext.SCREENS.THANK_YOU
             );
           } catch (error) {
-            attendeesContext.setClosedButtonDisabledState(false);
             toast.error("Something went wrong. Please try again");
+          } finally {
+            attendeesContext.setClosedButtonDisabledState(false);
           }
         }}
         locationId={process.env.REACT_APP_LOCATION_ID}
       >
         <CreditCard />
       </PaymentForm>
+      <Flex mt="30px">
+        <Styled.InfoText
+          onClick={() => window.open("https://squareup.com/", "_blank")}
+        >
+          Powered By Square
+        </Styled.InfoText>
+      </Flex>
     </div>
   );
 };

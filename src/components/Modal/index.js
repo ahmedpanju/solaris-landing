@@ -45,11 +45,14 @@ const Modal = ({ open, onClose }) => {
       <div style={{ padding: "30px" }}>
         <Flex mb="20px" justifyContent="space-between" alignItems="center">
           <Styled.Title>Secure Your Spot</Styled.Title>
-          <Styled.CloseButton
-            onClick={() =>
-              !attendeesContext.closeButtonDisabledState && handleClose()
-            }
-          />
+          {attendeesContext.currentScreenState !==
+            attendeesContext.SCREENS.PAYMENT && (
+            <Styled.CloseButton
+              onClick={() =>
+                !attendeesContext.closeButtonDisabledState && handleClose()
+              }
+            />
+          )}
         </Flex>
         <div>{renderCurrentScreen()}</div>
       </div>
