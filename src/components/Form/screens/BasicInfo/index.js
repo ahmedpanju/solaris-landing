@@ -11,6 +11,7 @@ import {
   Radio,
   withStyles,
   FormLabel,
+  CircularProgress,
 } from "@mui/material";
 import { AttendeesContext } from "../../../../context";
 
@@ -92,7 +93,7 @@ const BasicInfo = () => {
           );
         } else {
           attendeesContext.setCurrentScreenState(
-            attendeesContext.SCREENS.PAYMENT
+            attendeesContext.SCREENS.THANK_YOU
           );
         }
       } else {
@@ -188,11 +189,15 @@ const BasicInfo = () => {
         </Flex>
       )}
       <Flex justifyContent="center">
-        <Styled.BlackButton
-          onClick={() => !isLoadingState && validateResults()}
-        >
-          Continue To Payment
-        </Styled.BlackButton>
+        {isLoadingState ? (
+          <CircularProgress />
+        ) : (
+          <Styled.BlackButton
+            onClick={() => !isLoadingState && validateResults()}
+          >
+            Continue To Payment
+          </Styled.BlackButton>
+        )}
       </Flex>
     </div>
   );
