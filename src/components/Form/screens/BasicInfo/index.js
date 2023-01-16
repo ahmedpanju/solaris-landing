@@ -195,7 +195,7 @@ const BasicInfo = () => {
           <Styled.BlackButton
             onClick={() => !isLoadingState && validateResults()}
           >
-            Continue To Payment
+            Submit
           </Styled.BlackButton>
         )}
       </Flex>
