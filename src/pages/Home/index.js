@@ -17,7 +17,7 @@ const Home = () => {
             <Flex mb="50px">
               <Styled.TitleText>
                 Join the Web3 Revolution - Exclusive Crypto Networking Events
-                for Tech Companies and Developers
+                for <b>Tech Companies</b>, <b>Developers</b> & <b>Marketers</b>.
               </Styled.TitleText>
             </Flex>
             <Styled.SmallText>
