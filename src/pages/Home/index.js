@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Flex } from "rebass";
+import ReactGa from "react-ga4";
 
 import Modal from "../../components/Modal";
 
@@ -8,6 +9,10 @@ import Countdown from "../../components/Countdown";
 
 const Home = () => {
   const [formOpenState, setFormOpenState] = useState(false);
+
+  useEffect(() => {
+    ReactGa.pageview("/");
+  }, []);
 
   return (
     <Styled.Container>
@@ -35,7 +40,9 @@ const Home = () => {
             </Styled.SmallText>
             <Styled.ButtonContainer>
               <Styled.BlackButton
-                onClick={() => setFormOpenState(!formOpenState)}
+                onClick={() => {
+                  setFormOpenState(!formOpenState);
+                }}
               >
                 ENROLL NOW
               </Styled.BlackButton>
