@@ -4,6 +4,7 @@ import { Flex } from "rebass";
 import Modal from "../../components/Modal";
 
 import * as Styled from "./styles";
+import Countdown from "../../components/Countdown";
 
 const Home = () => {
   const [formOpenState, setFormOpenState] = useState(false);
@@ -25,6 +26,9 @@ const Home = () => {
               We are the premier destination for Web3 and A.I enthusiasts,
               connecting tech companies, developers and marketers through
               exclusive Web3 and A.I networking events.
+              <br />
+              <br />
+              <Countdown />
               <br />
               <br />
               Fill out the form below to be considered for our first event:
