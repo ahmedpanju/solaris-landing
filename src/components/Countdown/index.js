@@ -9,7 +9,7 @@ const Countdown = () => {
     minutes: 0,
     seconds: 0,
   });
-  const futureDate = moment("January 25, 2023 00:19:00 GMT+08:00");
+  const futureDate = moment("January 29, 2023 00:19:00 GMT+08:00");
 
   setInterval(() => {
     const currentDate = moment();
@@ -33,10 +33,19 @@ const Countdown = () => {
   }, 1000);
 
   return (
-    <Flex alignItems="center">
-      <b>
-        {`Our Next Event: ${countdownDataState.days} Days ${countdownDataState.hours} Hours ${countdownDataState.minutes} Minutes ${countdownDataState.seconds} Seconds`}
-      </b>
+    <Flex
+      alignItems="center"
+      style={{
+        textAlign: "center",
+        color: "white",
+        fontFamily: `"Roboto", sans-serif`,
+        letterSpacing: "3px",
+      }}
+    >
+      <span>
+        <b>Our Next Event:</b>
+        {` ${countdownDataState.days} Days ${countdownDataState.hours} Hours ${countdownDataState.minutes} Minutes ${countdownDataState.seconds} Seconds`}
+      </span>
     </Flex>
   );
 };

@@ -10,6 +10,9 @@ export const Description = styled.p`
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  line-height: 25px;
 `;
 
 export const BlackButton = styled.button`

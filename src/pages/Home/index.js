@@ -19,42 +19,33 @@ const Home = () => {
       <Styled.Wrapper>
         <Styled.MainTitleText>SOLARIS</Styled.MainTitleText>
         <Styled.Jumbotron>
-          <Styled.ContainerForText flexDirection="column">
-            <Flex mb="50px">
-              <Styled.TitleText>
-                Join the Web3 Revolution - Exclusive Crypto & A.I Networking
-                Events for <b>Tech Companies</b>, <b>Developers</b> &{" "}
-                <b>Marketers</b>.
-              </Styled.TitleText>
-            </Flex>
-            <Styled.SmallText>
-              We are the premier destination for Web3 and A.I enthusiasts,
-              connecting tech companies, developers and marketers through
-              exclusive Web3 and A.I networking events.
-              <br />
-              <br />
-              <Countdown />
-              <br />
-              <br />
-              Fill out the form below to be considered for our first event:
-            </Styled.SmallText>
-            <Styled.ButtonContainer>
-              <Styled.BlackButton
-                onClick={() => {
-                  setFormOpenState(!formOpenState);
-                }}
-              >
-                ENROLL NOW
-              </Styled.BlackButton>
-              <Styled.BlackButton
-                onClick={() =>
-                  window.open("https://twitter.com/Solarisevents_", "_blank")
-                }
-              >
-                <Styled.TwitterIcon />
-              </Styled.BlackButton>
-            </Styled.ButtonContainer>
-          </Styled.ContainerForText>
+          <Flex mb="50px">
+            <Styled.TitleText>
+              We Connect the Brightest Minds in Web3 & A.I
+            </Styled.TitleText>
+          </Flex>
+          <Styled.SmallText>
+            We host paint parties in Canggu
+            <br />
+            and turn them into NFTs for you to keep
+          </Styled.SmallText>
+          <Countdown />
+          <Styled.ButtonContainer>
+            <Styled.BlackButton
+              onClick={() => {
+                setFormOpenState(!formOpenState);
+              }}
+            >
+              ENROLL NOW
+            </Styled.BlackButton>
+            <Styled.BlackButton
+              onClick={() =>
+                window.open("https://twitter.com/Solarisevents_", "_blank")
+              }
+            >
+              <Styled.TwitterIcon />
+            </Styled.BlackButton>
+          </Styled.ButtonContainer>
         </Styled.Jumbotron>
       </Styled.Wrapper>
 

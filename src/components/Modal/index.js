@@ -43,17 +43,20 @@ const Modal = ({ open, onClose }) => {
   return (
     <Dialog open={open}>
       <div style={{ padding: "30px" }}>
-        <Flex mb="20px" justifyContent="space-between" alignItems="center">
-          <Styled.Title>Secure Your Spot</Styled.Title>
-          {attendeesContext.currentScreenState !==
-            attendeesContext.SCREENS.PAYMENT && (
-            <Styled.CloseButton
-              onClick={() =>
-                !attendeesContext.closeButtonDisabledState && handleClose()
-              }
-            />
-          )}
-        </Flex>
+        {attendeesContext.currentScreenState !==
+          attendeesContext.SCREENS.THANK_YOU && (
+          <Flex mb="20px" justifyContent="space-between" alignItems="center">
+            <Styled.Title>Secure Your Spot</Styled.Title>
+            {attendeesContext.currentScreenState !==
+              attendeesContext.SCREENS.PAYMENT && (
+              <Styled.CloseButton
+                onClick={() =>
+                  !attendeesContext.closeButtonDisabledState && handleClose()
+                }
+              />
+            )}
+          </Flex>
+        )}
         <div>{renderCurrentScreen()}</div>
       </div>
     </Dialog>
