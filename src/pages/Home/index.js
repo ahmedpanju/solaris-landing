@@ -40,7 +40,7 @@ const Home = () => {
             </Styled.BlackButton>
             <Styled.BlackButton
               onClick={() =>
-                window.open("https://twitter.com/Solarisevents_", "_blank")
+                window.open("https://twitter.com/Solarisagency_", "_blank")
               }
             >
               <Styled.TwitterIcon />
