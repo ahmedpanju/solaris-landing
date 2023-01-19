@@ -6,6 +6,7 @@ import Modal from "../../components/Modal";
 
 import * as Styled from "./styles";
 import Countdown from "../../components/Countdown";
+import WeHostEvents from "../../components/WeHostEvents";
 
 const Home = () => {
   const [formOpenState, setFormOpenState] = useState(false);
@@ -15,42 +16,43 @@ const Home = () => {
   }, []);
 
   return (
-    <Styled.Container>
-      <Styled.Wrapper>
-        <Styled.MainTitleText>SOLARIS</Styled.MainTitleText>
-        <Styled.Jumbotron>
-          <Flex mb="50px">
-            <Styled.TitleText>
-              We Connect the Brightest Minds in Web3 & A.I
-            </Styled.TitleText>
-          </Flex>
-          <Styled.SmallText>
-            We host paint parties in Canggu
-            <br />
-            and turn them into NFTs for you to keep
-          </Styled.SmallText>
-          <Countdown />
-          <Styled.ButtonContainer>
-            <Styled.BlackButton
-              onClick={() => {
-                setFormOpenState(!formOpenState);
-              }}
-            >
-              ENROLL NOW
-            </Styled.BlackButton>
-            <Styled.BlackButton
+    <Styled.BackgroundWrapper>
+      <Styled.Container>
+        <Styled.WrapperMain>
+          <Styled.NavigationContainer>
+            <Styled.TwitterIcon
               onClick={() =>
                 window.open("https://twitter.com/Solarisagency_", "_blank")
               }
-            >
-              <Styled.TwitterIcon />
-            </Styled.BlackButton>
-          </Styled.ButtonContainer>
-        </Styled.Jumbotron>
-      </Styled.Wrapper>
+            />
+            <Styled.MailIcon
+              onClick={() =>
+                window.open("mailto:info@solarisagency.io", "_blank")
+              }
+            />
+          </Styled.NavigationContainer>
+          <Styled.Wrapper>
+            <Styled.MainTitleText>WELCOME TO SOLARIS</Styled.MainTitleText>
+            <Styled.Jumbotron>
+              <Flex mb="40px">
+                <Styled.TitleText>
+                  We Connect the Brightest Minds in Web3 & A.I
+                </Styled.TitleText>
+              </Flex>
+              <Styled.SmallText>
+                We are a full-stack tech development and marketing agency for
+                Web3 & A.I companies. We also host Web3 events & build
+                communities in Bali.
+              </Styled.SmallText>
+              {/* <Countdown /> */}
+              <WeHostEvents />
+            </Styled.Jumbotron>
+          </Styled.Wrapper>
 
-      <Modal open={formOpenState} onClose={() => setFormOpenState(false)} />
-    </Styled.Container>
+          <Modal open={formOpenState} onClose={() => setFormOpenState(false)} />
+        </Styled.WrapperMain>
+      </Styled.Container>
+    </Styled.BackgroundWrapper>
   );
 };
 

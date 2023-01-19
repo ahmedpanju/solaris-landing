@@ -2,17 +2,85 @@ import styled, { css } from "styled-components";
 import { Flex } from "rebass";
 import AdbIcon from "@mui/icons-material/Adb";
 import Background from "./background.png";
+import BackgroundMobile from "./background-mobile.png";
+import InstagramIconMui from "@mui/icons-material/Instagram";
 import TwitterIconMui from "@mui/icons-material/Twitter";
+import MailIconMui from "@mui/icons-material/Mail";
 
-export const Container = styled.div`
+export const BackgroundWrapper = styled.div`
   min-width: 100vw;
   min-height: 100vh;
+  background-image: linear-gradient(
+      135deg,
+      rgba(163, 163, 163, 0.2) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, rgba(163, 163, 163, 0.01) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(163, 163, 163, 0.01) 25%, transparent 25%),
+    linear-gradient(
+      315deg,
+      rgba(163, 163, 163, 0.01) 25%,
+      rgba(163, 163, 163, 0.01) 25%
+    );
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  positon: relative;
+  background-color: black;
+`;
+
+export const Container = styled.div`
   background-image: url(${Background});
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (max-width: 768px) {
+    background-image: url(${BackgroundMobile});
+  }
+`;
+
+export const WrapperMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+`;
+
+export const NavigationContainer = styled.div`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+`;
+
+export const TwitterIcon = styled(TwitterIconMui)`
+  && {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 20px;
+  }
+`;
+
+export const InstagramIcon = styled(InstagramIconMui)`
+  && {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 20px;
+  }
+`;
+
+export const MailIcon = styled(MailIconMui)`
+  && {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -44,31 +112,35 @@ export const TitleText = styled.h1`
   color: ${({ color = "white" }) => color};
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
-  font-size: 70px;
+  font-size: 80px;
   text-align: center;
   background-size: 100%;
   background-repeat: repeat;
   max-width: 800px;
+  line-height: 90px;
 
   background-image: linear-gradient(45deg, #ccccff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-`;
-
-export const MainTitleText = styled(TitleText)`
-  font-size: 30px;
-  margin-bottom: 25px;
-  letter-spacing: 6px;
-  font-weight: 600;
-  text-align: center;
-  max-width: 100%;
 
   @media (max-width: 768px) {
     font-size: 50px;
-    padding-left: 20px;
+    line-height: 70px;
   }
+`;
+
+export const MainTitleText = styled(TitleText)`
+  line-height: 20px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-align: center;
+  max-width: 100%;
+  margin-top: 100px;
+  font-family: sk-regular;
 `;
 
 export const SmallText = styled.h4`
@@ -77,8 +149,8 @@ export const SmallText = styled.h4`
   color: white;
   font-weight: 500;
   letter-spacing: 2px;
-  line-height: 25px;
-  font-family: "Roboto", sans-serif;
+  line-height: 30px;
+  font-family: sk-curious;
   font-size: 20px;
   font-weight: 500;
   text-align: center;
@@ -120,12 +192,6 @@ export const ContainerForText = styled.div`
 
   @media (max-width: 768px) {
     padding: 20px;
-  }
-`;
-
-export const TwitterIcon = styled(TwitterIconMui)`
-  && {
-    color: white;
   }
 `;
 
