@@ -16,7 +16,7 @@ const WeHostEvents = () => {
       <Styled.CommunityContainer mb="100px" flex={2}>
         <Flex flexDirection="column" flex={1}>
           <Flex mb="20px">
-            <SmallHeader>Community-Building Focussed</SmallHeader>
+            <SmallHeader>Community-Building Focused</SmallHeader>
           </Flex>
           <Flex mb="20px">
             <BigHeader>
