@@ -101,7 +101,7 @@ const WeHostEvents = () => {
               <Styled.DateIcon />
               <Styled.GridTitle>When:</Styled.GridTitle>
               <Styled.GridDescriptonText>
-                Sunday January 30th 2023 @ 7pm
+                Monday January 30th 2023 @ 7pm
               </Styled.GridDescriptonText>
             </div>
             <Styled.MobileOnlyLocation>
